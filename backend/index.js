@@ -25,7 +25,7 @@ app.use(express.json());
 app.get("/", (req, res) => res.render("index"));
 app.use(UserRoute);
 
-const PORT = process.env.PORT || 5005;
+const PORT = process.env.PORT || 5002;
 
 (async () => {
   try {
