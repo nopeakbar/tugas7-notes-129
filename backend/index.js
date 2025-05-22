@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: true // ⚠️ izinkan semua origin, aman untuk testing tapi jangan dibiarkan untuk production
+  origin: true, // izinkan semua origin, aman untuk testing
 }));
 
 app.use(express.json());
@@ -25,6 +25,7 @@ app.use(express.json());
 app.get("/", (req, res) => res.render("index"));
 app.use(UserRoute);
 
+// Pakai port dari environment variable yang dikasih Cloud Run, fallback ke 5002
 const PORT = process.env.PORT || 5002;
 
 (async () => {
