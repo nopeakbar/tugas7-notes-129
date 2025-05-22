@@ -1,0 +1,110 @@
+POST http://localhost:5002/register
+Content-Type: application/json
+
+{
+    "name": "denskuy",
+    "email": "denskuy@.com",
+    "gender": "Male",
+    "password": "denskuy"
+}
+
+###
+
+POST http://localhost:5002/login
+Content-Type: application/json
+
+{
+    "email": "denskuy@gmail.com",
+    "password": "denskuy"
+}
+
+###
+
+POST http://localhost:5002/logout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6ImRlbnNrdXkiLCJlbWFpbCI6ImRlbnNrdXlAZ21haWwuY29tIiwiZ2VuZGVyIjoiTWFsZSIsImNyZWF0ZWRBdCI6IjIwMjUtMDUtMTRUMTU6MTI6MjIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDUtMThUMDk6Mzg6NTYuMDAwWiIsImlhdCI6MTc0NzUzNTk0MywiZXhwIjoxNzQ3NTM1OTczfQ.JhYz8vWcdtT1aWuHsaLwnd78x3yUejFVKYOpnd2Ny48
+
+###
+
+POST http://localhost:5002/notes 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6ImRlbnNrdXkiLCJlbWFpbCI6ImRlbnNrdXlAZ21haWwuY29tIiwiZ2VuZGVyIjoiTWFsZSIsImNyZWF0ZWRBdCI6IjIwMjUtMDUtMTRUMTU6MTI6MjIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDUtMThUMDM6MzM6NDQuMDAwWiIsImlhdCI6MTc0NzUzOTI4NCwiZXhwIjoxNzQ3NTM5MzE0fQ.54KhAIjdLI0iaa6oBotG8DHE3DW2trvHxEVS5tio0d4
+
+{
+    "date": "2025-03-12",
+    "title": "Transfer",
+    "content": "Jangan boros boros maseh"
+}
+
+###
+//Hapus Data
+DELETE http://localhost:5002/notes/9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6InRlcyIsImVtYWlsIjoidGVzQHRlcy5jb20iLCJnZW5kZXIiOiJNYWxlIiwiY3JlYXRlZEF0IjoiMjAyNS0wNS0xNFQxNTowODoxNi4wMDBaIiwidXBkYXRlZEF0IjoiMjAyNS0wNS0xN1QxNzo0MDoxMi4wMDBaIiwiaWF0IjoxNzQ3NTAzNjUwLCJleHAiOjE3NDc1MDM2ODB9.kNBTMqt1Z-GNGU2KOrMnsAknNEOPNpGT_gWLx7JxYOw
+
+//Edit data
+###
+PUT http://localhost:5002/notes/13
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6ImRlbnNrdXkiLCJlbWFpbCI6ImRlbnNrdXlAZ21haWwuY29tIiwiZ2VuZGVyIjoiTWFsZSIsImNyZWF0ZWRBdCI6IjIwMjUtMDUtMTRUMTU6MTI6MjIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDUtMThUMDQ6MjM6NTkuMDAwWiIsImlhdCI6MTc0NzU0MjUyMSwiZXhwIjoxNzQ3NTQyNTUxfQ._B-RClDgj4SUhmvrQFyB1v78NSewWDAOXrHx2EwDAUQ
+
+{
+    "date": "2025-03-12",
+    "title": "Transfer",
+    "content": "Jangan boros boros maseh"
+}
+
+###
+
+GET http://localhost:5002/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6ImRlbnNrdXkiLCJlbWFpbCI6ImRlbnNrdXlALmNvbSIsImdlbmRlciI6Ik1hbGUiLCJjcmVhdGVkQXQiOiIyMDI1LTA1LTE0VDE1OjEyOjIyLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTA1LTE0VDE2OjI0OjAyLjAwMFoiLCJpYXQiOjE3NDcyNDAwMTUsImV4cCI6MTc0NzI0MDA0NX0.noQkIL6KZ_wQ8DH_ucAZLfnrF9_Yjqxb21wUp0cTnVY
+
+
+###
+
+GET http://localhost:5002/crud_notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6InRlcyIsImVtYWlsIjoidGVzQHRlcy5jb20iLCJnZW5kZXIiOiJNYWxlIiwiY3JlYXRlZEF0IjoiMjAyNS0wNS0wNFQxNzo0Nzo0OS4wMDBaIiwidXBkYXRlZEF0IjoiMjAyNS0wNS0wNFQxODoxMzoyOS4wMDBaIiwiaWF0IjoxNzQ2MzgyNjI4LCJleHAiOjE3NDYzODI2NTh9.7oXC7vpjl28v7ez0mO7sZGW1v33kLXo0HFkg5fcEyC0
+
+###
+
+POST http://localhost:5002/add-user 
+Content-Type: application/json
+
+{
+    "name": "tes",
+    "email": "tes@tes.com",
+    "gender": "Male",
+    "password": "12345"
+}
+
+### 
+
+PUT http://localhost:5000/edit-user/14
+Content-Type: application/json
+
+{
+    "name": "tessss",
+    "email": "tesss@tessss.com",
+    "gender": "Male"
+}
+
+###
+
+DELETE http://localhost:5000/delete-user/17
+
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+   
+    "email": "tes@tes.com",
+    "password": "12345"
+}
+
+
+
+###
+
+DELETE http://localhost:5000/logout
