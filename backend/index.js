@@ -15,7 +15,11 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({
+  credentials: true,
+  origin: true // ⚠️ izinkan semua origin, aman untuk testing tapi jangan dibiarkan untuk production
+}));
+
 app.use(express.json());
 
 app.get("/", (req, res) => res.render("index"));
