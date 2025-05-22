@@ -20,8 +20,6 @@ steps:
         "gcr.io/$PROJECT_ID/notesbe-129-akbar",
         "--timeout",
         "1000s",
-        "--port",
-        "5005",
         "--region",
         "us-central1",
         "--allow-unauthenticated",
